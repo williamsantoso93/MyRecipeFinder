@@ -7,7 +7,6 @@
 
 import UIKit
 
-//52772
 class DetailFoodViewController: UIViewController {
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
