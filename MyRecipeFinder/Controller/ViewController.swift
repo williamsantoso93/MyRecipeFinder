@@ -60,7 +60,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardTableViewCell
         
         cell.cardTitleLabel.text = categories[indexPath.row].strCategory
-        
+        if let url = URL(string: categories[indexPath.row].strCategoryThumb) {
+            cell.cardImageView.load(url: url)
+        }
         return cell
     }
     
