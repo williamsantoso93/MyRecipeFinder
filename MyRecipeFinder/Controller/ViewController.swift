@@ -61,7 +61,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.cardTitleLabel.text = categories[indexPath.row].strCategory
         if let url = URL(string: categories[indexPath.row].strCategoryThumb) {
-            cell.cardImageView.load(url: url)
+            cell.cardImageView.load(url: url) { finished in
+                if finished {
+                    cell.indicator.stopAnimating()
+                }
+            }
         }
         return cell
     }

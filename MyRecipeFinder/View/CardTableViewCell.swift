@@ -12,12 +12,14 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardTitleLabel: UILabel!
     @IBOutlet weak var cardBackgroundView: UIView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         cardBackgroundView.layer.cornerRadius = 10
         cardImageView.layer.cornerRadius = cardImageView.layer.frame.width/2
+        indicator.startAnimating()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
