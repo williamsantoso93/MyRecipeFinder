@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     var categories = [Category]()
+    var selectedIndex = 0
     
     var titles: [String] {
         var temp = [String]()
@@ -47,6 +48,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FoodSegue" {
+            let controller = segue.destination as! FoodListViewController
+            controller.title = categories[selectedIndex].strCategory
+        }
+    }
 
 }
 
@@ -60,6 +68,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardTableViewCell
         
         cell.cardTitleLabel.text = categories[indexPath.row].strCategory
+        cell.index = indexPath.row
         if let url = URL(string: categories[indexPath.row].strCategoryThumb) {
             cell.cardImageView.load(url: url) { finished in
                 if finished {
@@ -67,6 +76,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
+        cell.delegate = self
+        
         return cell
     }
     
@@ -85,4 +96,12 @@ extension ViewController: UISearchBarDelegate, UISearchResultsUpdating {
         print(searchBar.text)
     }
 
+}
+
+extension ViewController: CardOnTapDelegate {
+    func cardOnTap(index: Int) {
+        print(index)
+        selectedIndex = index
+        performSegue(withIdentifier: "FoodSegue", sender: self)
+    }
 }

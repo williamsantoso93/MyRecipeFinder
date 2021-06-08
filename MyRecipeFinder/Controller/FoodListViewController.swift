@@ -12,6 +12,9 @@ class FoodListViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+//    var title: String
+    var meals = [Meal]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +24,25 @@ class FoodListViewController: UIViewController {
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+        let category = navigationItem.title ?? ""
+        getMealsData(from: category)
     }
-    
+//    https://www.themealdb.com/api/json/v1/1/filter.php?c=
 
+    func getMealsData(from category: String) {
+        let urlSting = "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(category)"
+        Networking.shared.getData(from: urlSting) { (result: Result<AllMeals,NetworkError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data) :
+                    self.meals = data.meals
+                    self.tableView.reloadData()
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -39,16 +58,22 @@ class FoodListViewController: UIViewController {
 extension FoodListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return meals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardTableViewCell
         
-//        cell.cardTitleLabel.text = categories[indexPath.row].strCategory
-//        if let url = URL(string: categories[indexPath.row].strCategoryThumb) {
-//            cell.cardImageView.load(url: url)
-//        }
+        cell.cardTitleLabel.text = meals[indexPath.row].strMeal
+        cell.index = indexPath.row
+        if let url = URL(string: meals[indexPath.row].strMealThumb) {
+            cell.cardImageView.load(url: url) { finished in
+                if finished {
+                    cell.indicator.stopAnimating()
+                }
+            }
+        }
+        cell.delegate = self
         return cell
     }
     
@@ -67,4 +92,13 @@ extension FoodListViewController: UISearchBarDelegate, UISearchResultsUpdating {
         print(searchBar.text)
     }
 
+}
+
+
+extension FoodListViewController: CardOnTapDelegate {
+    func cardOnTap(index: Int) {
+        print(index)
+//        selectedIndex = index
+//        performSegue(withIdentifier: "FoodSegue", sender: self)
+    }
 }
