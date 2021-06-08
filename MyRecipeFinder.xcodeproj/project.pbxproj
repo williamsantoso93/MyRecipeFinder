@@ -13,6 +13,8 @@
 		6A58353A266DF0200009B467 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A583539266DF0200009B467 /* APIModel.swift */; };
 		7A831AC7266D1D080086C60B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A831AC6266D1D080086C60B /* TableViewController.swift */; };
 		7AA9005D266F7CBD002E9C2B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9005C266F7CBD002E9C2B /* Extension.swift */; };
+		7ABDD293266F7E5800940B79 /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDD292266F7E5800940B79 /* FoodListViewController.swift */; };
+		7ABDD295266F7E6300940B79 /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDD294266F7E6300940B79 /* DetailFoodViewController.swift */; };
 		7AD69171266D142C00FAEAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69170266D142C00FAEAB1 /* AppDelegate.swift */; };
 		7AD69173266D142C00FAEAB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69172266D142C00FAEAB1 /* SceneDelegate.swift */; };
 		7AD69175266D142C00FAEAB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69174266D142C00FAEAB1 /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		6A583539266DF0200009B467 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		7A831AC6266D1D080086C60B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7AA9005C266F7CBD002E9C2B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7ABDD292266F7E5800940B79 /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
+		7ABDD294266F7E6300940B79 /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
 		7AD6916D266D142C00FAEAB1 /* MyRecipeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecipeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD69170266D142C00FAEAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD69172266D142C00FAEAB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				7AD69174266D142C00FAEAB1 /* ViewController.swift */,
+				7ABDD292266F7E5800940B79 /* FoodListViewController.swift */,
+				7ABDD294266F7E6300940B79 /* DetailFoodViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 				7AD69175266D142C00FAEAB1 /* ViewController.swift in Sources */,
 				7AD69171266D142C00FAEAB1 /* AppDelegate.swift in Sources */,
 				6A583537266DEFF90009B467 /* Networking.swift in Sources */,
+				7ABDD295266F7E6300940B79 /* DetailFoodViewController.swift in Sources */,
 				7AD69173266D142C00FAEAB1 /* SceneDelegate.swift in Sources */,
+				7ABDD293266F7E5800940B79 /* FoodListViewController.swift in Sources */,
 				7A831AC7266D1D080086C60B /* TableViewController.swift in Sources */,
 				7AA9005D266F7CBD002E9C2B /* Extension.swift in Sources */,
 			);

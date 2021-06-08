@@ -45,6 +45,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="G2s-0a-U9Z" id="yGi-HD-DaW"/>
+                        <segue destination="g5g-kv-Pv6" kind="show" identifier="FoodSegue" id="ZbO-Bn-27P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -120,6 +121,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ied-Lf-Q8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="113.83928571428571"/>
+        </scene>
+        <!--Food-->
+        <scene sceneID="7eG-wB-0ow">
+            <objects>
+                <viewController id="g5g-kv-Pv6" customClass="FoodListViewController" customModule="MyRecipeFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8B-1n-Bgb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="64o-uZ-5AP">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZWX-Ff-Lxy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="e6e-r1-LRa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nbc-bj-CHW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="64o-uZ-5AP" firstAttribute="top" secondItem="nbc-bj-CHW" secondAttribute="top" id="4Yl-cS-NWi"/>
+                            <constraint firstItem="64o-uZ-5AP" firstAttribute="trailing" secondItem="nbc-bj-CHW" secondAttribute="trailing" id="JV1-tP-vD3"/>
+                            <constraint firstItem="64o-uZ-5AP" firstAttribute="leading" secondItem="nbc-bj-CHW" secondAttribute="leading" id="SUQ-jz-q0z"/>
+                            <constraint firstAttribute="bottom" secondItem="64o-uZ-5AP" secondAttribute="bottom" id="yWO-Gz-ArH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Food" id="8gh-Mz-a8L"/>
+                    <connections>
+                        <outlet property="tableView" destination="64o-uZ-5AP" id="uBo-QX-APi"/>
+                        <segue destination="aeC-J7-u6c" kind="show" identifier="detailSegue" id="J3q-GV-IO8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urb-1B-sRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2064" y="536"/>
+        </scene>
+        <!--Food name-->
+        <scene sceneID="BYF-Rl-6nh">
+            <objects>
+                <viewController id="aeC-J7-u6c" customClass="DetailFoodViewController" customModule="MyRecipeFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vva-uO-d03">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CUg-05-M57"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Food name" largeTitleDisplayMode="never" id="1nI-Ak-SiI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hc6-HE-fpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3068" y="536"/>
         </scene>
     </scenes>
     <resources>
