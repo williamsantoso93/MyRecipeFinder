@@ -36,7 +36,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Recipe Finder" largeTitleDisplayMode="always" id="pZI-lB-FVc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="ZNK-Ht-uEO"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="lIA-lH-Wjb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" id="ZNK-Ht-uEO">
+                            <connections>
+                                <segue destination="Q3j-L3-IdM" kind="show" id="Bor-V3-g8y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="G2s-0a-U9Z" id="yGi-HD-DaW"/>
@@ -45,6 +50,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="113.83928571428571"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Eje-RE-5Nr">
+            <objects>
+                <viewController id="Q3j-L3-IdM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KoL-v2-pZg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Sxu-vO-qEG">
+                                <rect key="frame" x="82" y="284" width="250" height="328.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="suA-1s-cet">
+                                        <rect key="frame" x="0.0" y="0.5" width="250" height="249"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="Fxy-Oq-fcD"/>
+                                            <constraint firstAttribute="width" constant="250" id="UZN-Xu-fgy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-Gb-Chp">
+                                        <rect key="frame" x="0.0" y="273" width="250" height="55.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="William Santoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYG-D2-q16">
+                                                <rect key="frame" x="31.5" y="0.0" width="187.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="williamsantoso1993@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l6-WH-UD2">
+                                                <rect key="frame" x="3.5" y="35" width="243" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xiZ-Ga-PYD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sxu-vO-qEG" firstAttribute="centerY" secondItem="KoL-v2-pZg" secondAttribute="centerY" id="Slv-ON-ONk"/>
+                            <constraint firstItem="Sxu-vO-qEG" firstAttribute="centerX" secondItem="KoL-v2-pZg" secondAttribute="centerX" id="slv-Oi-cyC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="wpy-tu-0KS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWm-TZ-dfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="-331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hfs-TM-qBA">
@@ -67,6 +124,7 @@
     </scenes>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -18,9 +18,9 @@ struct AllCategories: Codable {
 
 // MARK: - Category
 struct Category: Codable {
-    var idCategory, strCategory: String
+    var idCategory: String
+    var strCategory: String
     var strCategoryThumb: String
-    var strCategoryDescription: String
 }
 
 //https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
