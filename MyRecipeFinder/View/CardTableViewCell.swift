@@ -37,9 +37,7 @@ class CardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @objc func didTapView(_ sender: UITapGestureRecognizer) {
-        print("did tap view")
         delegate?.cardOnTap(index: index)
-//        cardOnTap()
     }
     
 }

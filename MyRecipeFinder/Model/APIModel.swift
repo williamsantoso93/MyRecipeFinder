@@ -41,3 +41,7 @@ struct Meal: Codable {
 struct MealData: Codable {
     var meals: [[String: String?]]
 }
+
+struct DetailMeal: Codable {
+    
+}

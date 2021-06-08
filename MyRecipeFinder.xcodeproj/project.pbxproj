@@ -11,10 +11,10 @@
 		6A583533266DDF290009B467 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A583531266DDF290009B467 /* CardTableViewCell.xib */; };
 		6A583537266DEFF90009B467 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A583536266DEFF90009B467 /* Networking.swift */; };
 		6A58353A266DF0200009B467 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A583539266DF0200009B467 /* APIModel.swift */; };
-		7A831AC7266D1D080086C60B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A831AC6266D1D080086C60B /* TableViewController.swift */; };
 		7AA9005D266F7CBD002E9C2B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9005C266F7CBD002E9C2B /* Extension.swift */; };
 		7ABDD293266F7E5800940B79 /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDD292266F7E5800940B79 /* FoodListViewController.swift */; };
 		7ABDD295266F7E6300940B79 /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDD294266F7E6300940B79 /* DetailFoodViewController.swift */; };
+		7ABDD297266FB03B00940B79 /* IngredientListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDD296266FB03B00940B79 /* IngredientListTableViewCell.swift */; };
 		7AD69171266D142C00FAEAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69170266D142C00FAEAB1 /* AppDelegate.swift */; };
 		7AD69173266D142C00FAEAB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69172266D142C00FAEAB1 /* SceneDelegate.swift */; };
 		7AD69175266D142C00FAEAB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD69174266D142C00FAEAB1 /* ViewController.swift */; };
@@ -47,10 +47,10 @@
 		6A583531266DDF290009B467 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		6A583536266DEFF90009B467 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		6A583539266DF0200009B467 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		7A831AC6266D1D080086C60B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7AA9005C266F7CBD002E9C2B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7ABDD292266F7E5800940B79 /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		7ABDD294266F7E6300940B79 /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
+		7ABDD296266FB03B00940B79 /* IngredientListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListTableViewCell.swift; sourceTree = "<group>"; };
 		7AD6916D266D142C00FAEAB1 /* MyRecipeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecipeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD69170266D142C00FAEAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD69172266D142C00FAEAB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 			children = (
 				6A583530266DDF290009B467 /* CardTableViewCell.swift */,
 				6A583531266DDF290009B467 /* CardTableViewCell.xib */,
+				7ABDD296266FB03B00940B79 /* IngredientListTableViewCell.swift */,
 			);
 			name = "Table View Cell";
 			sourceTree = "<group>";
@@ -166,7 +167,6 @@
 				6A583538266DF00F0009B467 /* Model */,
 				6A583534266DE2580009B467 /* Controller */,
 				6A58352E266DDEE60009B467 /* View */,
-				7A831AC6266D1D080086C60B /* TableViewController.swift */,
 				7AD69179266D142D00FAEAB1 /* Assets.xcassets */,
 				7AD6917B266D142D00FAEAB1 /* LaunchScreen.storyboard */,
 				7AD6917E266D142D00FAEAB1 /* Info.plist */,
@@ -325,13 +325,13 @@
 			files = (
 				6A58353A266DF0200009B467 /* APIModel.swift in Sources */,
 				6A583532266DDF290009B467 /* CardTableViewCell.swift in Sources */,
+				7ABDD297266FB03B00940B79 /* IngredientListTableViewCell.swift in Sources */,
 				7AD69175266D142C00FAEAB1 /* ViewController.swift in Sources */,
 				7AD69171266D142C00FAEAB1 /* AppDelegate.swift in Sources */,
 				6A583537266DEFF90009B467 /* Networking.swift in Sources */,
 				7ABDD295266F7E6300940B79 /* DetailFoodViewController.swift in Sources */,
 				7AD69173266D142C00FAEAB1 /* SceneDelegate.swift in Sources */,
 				7ABDD293266F7E5800940B79 /* FoodListViewController.swift in Sources */,
-				7A831AC7266D1D080086C60B /* TableViewController.swift in Sources */,
 				7AA9005D266F7CBD002E9C2B /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

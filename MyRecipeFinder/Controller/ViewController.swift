@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var categories = [Category]()
     var selectedIndex = 0
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
                 switch result {
                 case .success(let data) :
                     self.categories = data.categories
+                    self.indicator.stopAnimating()
                     self.tableView.reloadData()
                 case .failure(let error) :
                     print(error.localizedDescription)
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FoodSegue" {
             let controller = segue.destination as! FoodListViewController
-            controller.title = categories[selectedIndex].strCategory
+            controller.category = categories[selectedIndex].strCategory
         }
     }
 
@@ -75,16 +77,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
-    }
 }
 
 extension ViewController: CardOnTapDelegate {
     func cardOnTap(index: Int) {
-        print(index)
         selectedIndex = index
         performSegue(withIdentifier: "FoodSegue", sender: self)
     }

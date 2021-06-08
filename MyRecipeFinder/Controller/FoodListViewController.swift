@@ -9,20 +9,23 @@ import UIKit
 
 class FoodListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-//    var title: String
+    var category: String = ""
     var meals = [Meal]()
+    
+    var selectedIndex = 0
+    var selectedImage = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "CardTableViewCell", bundle: nil), forCellReuseIdentifier: "CardCell")
+        navigationItem.title = category
         
-        let category = navigationItem.title ?? ""
         getMealsData(from: category)
     }
-//    https://www.themealdb.com/api/json/v1/1/filter.php?c=
 
     func getMealsData(from category: String) {
         let urlSting = "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(category)"
@@ -31,6 +34,7 @@ class FoodListViewController: UIViewController {
                 switch result {
                 case .success(let data) :
                     self.meals = data.meals
+                    self.indicator.stopAnimating()
                     self.tableView.reloadData()
                 case .failure(let error) :
                     print(error.localizedDescription)
@@ -38,16 +42,15 @@ class FoodListViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "detailSegue" {
+            let controller = segue.destination as! DetailFoodViewController
+            
+            controller.mealName = meals[selectedIndex].strMeal
+            controller.mealID = meals[selectedIndex].idMeal
+        }
     }
-    */
-
 }
 
 extension FoodListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -74,14 +77,12 @@ extension FoodListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
     }
 }
 
 extension FoodListViewController: CardOnTapDelegate {
     func cardOnTap(index: Int) {
-        print(index)
-//        selectedIndex = index
-//        performSegue(withIdentifier: "FoodSegue", sender: self)
+        selectedIndex = index
+        performSegue(withIdentifier: "detailSegue", sender: self)
     }
 }
