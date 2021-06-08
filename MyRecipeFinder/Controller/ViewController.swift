@@ -10,8 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    let searchController = UISearchController(searchResultsController: nil)
-    
     var categories = [Category]()
     var selectedIndex = 0
     
@@ -28,9 +26,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "CardTableViewCell", bundle: nil), forCellReuseIdentifier: "CardCell")
         
-        navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
         getCategorisData()
     }
 
@@ -85,17 +80,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
     }
-}
-
-extension ViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print(searchController.searchBar.text)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
-    }
-
 }
 
 extension ViewController: CardOnTapDelegate {

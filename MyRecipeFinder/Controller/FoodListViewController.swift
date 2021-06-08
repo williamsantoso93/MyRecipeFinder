@@ -10,8 +10,6 @@ import UIKit
 class FoodListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    let searchController = UISearchController(searchResultsController: nil)
-    
 //    var title: String
     var meals = [Meal]()
     
@@ -21,9 +19,6 @@ class FoodListViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "CardTableViewCell", bundle: nil), forCellReuseIdentifier: "CardCell")
         
-        navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
         let category = navigationItem.title ?? ""
         getMealsData(from: category)
     }
@@ -82,18 +77,6 @@ extension FoodListViewController: UITableViewDataSource, UITableViewDelegate {
         print(indexPath.row)
     }
 }
-
-extension FoodListViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print(searchController.searchBar.text)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
-    }
-
-}
-
 
 extension FoodListViewController: CardOnTapDelegate {
     func cardOnTap(index: Int) {
