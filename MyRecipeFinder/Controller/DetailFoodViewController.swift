@@ -74,7 +74,6 @@ class DetailFoodViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension DetailFoodViewController: UITableViewDelegate, UITableViewDataSource {
